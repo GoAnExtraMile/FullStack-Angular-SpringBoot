@@ -1,11 +1,23 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul clsss = "navbar-nav">
+    <li class="nav-item">
+    <a routerLink="employees" routerLinkActive="active" class="nav-link">Employee List</a>
+    </li>
+  </ul>
+</nav>
+
 <h1 class="text-center">{{title}}</h1>
 
-<!-- <app-home></app-home> -->
 <div class="container">
-<app-listemployees></app-listemployees>
+  <router-outlet></router-outlet>
 </div>
 
+<footer class="footer">
+  <span>Employee Management System @2023</span>
+</footer>
+
+<!-- <app-home></app-home> -->
+<!-- <app-listemployees></app-listemployees> -->
 <!-- <div>Component Content</div> -->
 
-<!-- <router-outlet></router-outlet> -->
+
