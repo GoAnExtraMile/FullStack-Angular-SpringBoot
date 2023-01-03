@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Employee } from "../employee";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-create-employee",
@@ -8,11 +9,14 @@ import { Employee } from "../employee";
 })
 export class CreateEmployeeComponent implements OnInit {
   employee: Employee = new Employee();
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
 
-  onSubmit(){
-    
+  addEmployee(firstName: string) {
+    this.router.navigate(["welcome", firstName]);
+  }
+  onSubmit() {
+    console.log(this.employee);
   }
 }
