@@ -7,6 +7,7 @@ import { Employee } from "../employee";
 })
 export class ListemployeesComponent implements OnInit {
   employees: Employee[];
+
   constructor() {}
 
   ngOnInit(): void {

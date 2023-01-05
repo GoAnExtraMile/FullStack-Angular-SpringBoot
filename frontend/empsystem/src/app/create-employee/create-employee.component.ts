@@ -1,6 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { Employee } from "../employee";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
+
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+} from "@angular/forms";
 
 @Component({
   selector: "app-create-employee",
@@ -9,14 +16,25 @@ import { Router } from "@angular/router";
 })
 export class CreateEmployeeComponent implements OnInit {
   employee: Employee = new Employee();
-  constructor(private router: Router) {}
+
+  form: any;
+
+  constructor(private router: Router, private route: ActivatedRoute) {
+    this.form = new FormGroup({
+      firstName: new FormControl("", Validators.required),
+      lastName: new FormControl("", Validators.required),
+      emailId: new FormControl("", Validators.required),
+    });
+  }
 
   ngOnInit() {}
 
-  addEmployee(firstName: string) {
-    this.router.navigate(["welcome", firstName]);
-  }
   onSubmit() {
+    console.log("OnSubmit");
     console.log(this.employee);
+
+    this.router.navigate(["welcome"], {
+      queryParams: { data: btoa(this.employee.firstName) },
+    });
   }
 }

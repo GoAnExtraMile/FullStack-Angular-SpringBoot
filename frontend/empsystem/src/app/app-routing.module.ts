@@ -7,7 +7,7 @@ import { WelcomeComponent } from "./welcome/welcome.component";
 const routes: Routes = [
   { path: "employees", component: ListemployeesComponent },
   { path: "create-employee", component: CreateEmployeeComponent },
-  { path: "welcome/:firstName", component: WelcomeComponent },
+  { path: "welcome", component: WelcomeComponent },
   { path: "", redirectTo: "employees", pathMatch: "full" },
 ];
 

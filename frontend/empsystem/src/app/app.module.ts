@@ -7,7 +7,7 @@ import { HomeComponent } from "./home/home.component";
 import { ListemployeesComponent } from "./listemployees/listemployees.component";
 import { CreateEmployeeComponent } from "./create-employee/create-employee.component";
 import { FormsModule } from "@angular/forms";
-import { WelcomeComponent } from './welcome/welcome.component';
+import { WelcomeComponent } from "./welcome/welcome.component";
 
 @NgModule({
   declarations: [
