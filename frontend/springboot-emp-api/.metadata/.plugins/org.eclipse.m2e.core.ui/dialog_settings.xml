@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\priti\CognizantOnboarding\Angular\AngularSpringBootAssignment\FullStack-Angular-SpringBoot"/>
+			<item value="C:\Users\priti\CognizantOnboarding\Angular\AngularSpringBootAssignment\FullStack-Angular-SpringBoot\frontend"/>
 			<item value="C:\Users\priti\CognizantOnboarding\Angular\AngularSpringBootAssignment\FullStack-Angular-SpringBoot\frontend\springboot-emp-api"/>
 		</list>
 		<list key="projectNameTemplate">
