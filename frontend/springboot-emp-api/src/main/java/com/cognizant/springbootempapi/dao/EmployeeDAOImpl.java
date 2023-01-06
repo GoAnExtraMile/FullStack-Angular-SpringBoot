@@ -18,8 +18,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	@Override
 	public int save(Employee employee) {
-		// TODO Auto-generated method stub
-		return 0;
+		return jdbcTemplate.update("INSERT INTO employee (fname, lname, email) values (?, ?, ?)",new Object[] { employee.getFname(), employee.getLname(), employee.getEmail()});
+		
 	}
 
 	@Override
