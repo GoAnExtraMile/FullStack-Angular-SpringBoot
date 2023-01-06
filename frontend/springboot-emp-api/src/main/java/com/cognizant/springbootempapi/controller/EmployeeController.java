@@ -3,6 +3,7 @@ package com.cognizant.springbootempapi.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,5 +38,10 @@ public class EmployeeController {
 	@PutMapping("/employees/{id}")
 	public String updateEmployee(@RequestBody Employee employee, @PathVariable int id) {
 		 return empDao.update(employee, id) + " number of records updated to the database.";
+	}
+	
+	@DeleteMapping("/employees/{id}")
+	public String deleteEmployeeById(@PathVariable int id) {
+		return empDao.delete(id) + " number of records deleted from database.";
 	}
 }

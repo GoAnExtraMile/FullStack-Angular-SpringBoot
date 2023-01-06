@@ -30,8 +30,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	@Override
 	public int delete(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+		return jdbcTemplate.update("DELETE FROM employee WHERE id=?", id);
 	}
 
 	@Override
