@@ -3,19 +3,19 @@ package com.cognizant.springbootempapi.model;
 public class Employee {
 	
 	private int id;
-	private String fname;
-	private String lname;
-	private String email;
+	private String firstName;
+	private String lastName;
+	private String emailId;
 	
 	
 	public Employee() {
 		
 	}
-	public Employee(String fname, String lname, String email) {
+	public Employee(String firstName, String lastName, String emailId) {
 		super();
-		this.fname = fname;
-		this.lname = lname;
-		this.email = email;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.emailId = emailId;
 	}
 	public int getId() {
 		return id;
@@ -23,25 +23,22 @@ public class Employee {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getFname() {
-		return fname;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setFname(String fname) {
-		this.fname = fname;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-	public String getLname() {
-		return lname;
+	public String getLastName() {
+		return lastName;
 	}
-	public void setLname(String lname) {
-		this.lname = lname;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
-	public String getEmail() {
-		return email;
+	public String getEmailId() {
+		return emailId;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
 	}
-	
-
-	
 }

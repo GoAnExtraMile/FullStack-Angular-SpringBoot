@@ -18,13 +18,13 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	@Override
 	public int save(Employee employee) {
-		return jdbcTemplate.update("INSERT INTO employee (fname, lname, email) values (?, ?, ?)",new Object[] { employee.getFname(), employee.getLname(), employee.getEmail()});
+		return jdbcTemplate.update("INSERT INTO employee (first_name, last_name, email_id) values (?, ?, ?)",new Object[] { employee.getFirstName(), employee.getLastName(), employee.getEmailId()});
 		
 	}
 
 	@Override
 	public int update(Employee employee, int id) {
-		return jdbcTemplate.update("UPDATE employee SET fname=?, lname=?, email=? WHERE id=?", new Object[] {employee.getFname(), employee.getLname(), employee.getEmail(), id});
+		return jdbcTemplate.update("UPDATE employee SET first_name=?, last_name=?, email_id=? WHERE id=?", new Object[] {employee.getFirstName(), employee.getLastName(), employee.getEmailId(), id});
 		
 	}
 
