@@ -11,9 +11,8 @@ public class Employee {
 	public Employee() {
 		
 	}
-	public Employee(int id, String fname, String lname, String email) {
+	public Employee(String fname, String lname, String email) {
 		super();
-		this.id = id;
 		this.fname = fname;
 		this.lname = lname;
 		this.email = email;

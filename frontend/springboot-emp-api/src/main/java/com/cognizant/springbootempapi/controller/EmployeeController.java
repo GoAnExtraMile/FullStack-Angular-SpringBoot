@@ -9,19 +9,23 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cognizant.springbootempapi.dao.EmployeeDAO;
 import com.cognizant.springbootempapi.model.Employee;
 
 @RestController
+@RequestMapping("/api/v1")
 public class EmployeeController {
 
 	@Autowired
 	private EmployeeDAO empDao;
 	
+	// Get All Employees
+	
 	@GetMapping("/employees")
-	public List<Employee> getEmployees() {
+	public List<Employee> getAllEmployees() {
 		return empDao.getAll();
 	}
 	

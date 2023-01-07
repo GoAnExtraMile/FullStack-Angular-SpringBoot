@@ -6,7 +6,7 @@ import com.cognizant.springbootempapi.model.Employee;
 
 public interface EmployeeDAO {
 	
-int save(Employee employee);
+	int save(Employee employee);
 	
 	int update(Employee employee, int id);
 	
