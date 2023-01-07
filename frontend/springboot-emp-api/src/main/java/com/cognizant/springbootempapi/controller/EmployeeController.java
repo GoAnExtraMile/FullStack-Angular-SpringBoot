@@ -3,6 +3,7 @@ package com.cognizant.springbootempapi.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cognizant.springbootempapi.dao.EmployeeDAO;
 import com.cognizant.springbootempapi.model.Employee;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/v1")
 public class EmployeeController {
@@ -29,10 +31,14 @@ public class EmployeeController {
 		return empDao.getAll();
 	}
 	
+	// Get Employee By Id
+	
 	@GetMapping("/employees/{id}")
 	public Employee getEmployeeById(@PathVariable int id) {
 		return empDao.getById(id);
 	}
+	
+	// Create Employee
 	
 	@PostMapping("/employees")
 	public String saveEmployee(@RequestBody Employee employee) {
