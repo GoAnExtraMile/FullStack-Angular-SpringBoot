@@ -17,17 +17,19 @@ import {
 })
 export class CreateEmployeeComponent implements OnInit {
   employee: Employee = new Employee();
-  form: any;
+  userForm: FormGroup;
+  //userForm: any;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private employeeService: EmployeeService
+    private employeeService: EmployeeService,
+    private formBuilder: FormBuilder
   ) {
-    this.form = new FormGroup({
-      firstName: new FormControl("", Validators.required),
-      lastName: new FormControl("", Validators.required),
-      emailId: new FormControl("", Validators.required),
+    this.userForm = formBuilder.group({
+      firstName: ["", Validators.required],
+      lastName: ["", Validators.required],
+      emailId: ["", Validators.required],
     });
   }
 
@@ -42,8 +44,8 @@ export class CreateEmployeeComponent implements OnInit {
     );
   }
 
-  onSubmit() {
-    console.log("OnSubmit");
+  onSubmit(userForm: any) {
+    console.log("OnSubmit", userForm);
     console.log(this.employee);
 
     this.saveEmployee();
@@ -51,5 +53,14 @@ export class CreateEmployeeComponent implements OnInit {
     this.router.navigate(["welcome"], {
       queryParams: { data: btoa(this.employee.firstName) },
     });
+  }
+
+  onClear() {
+    console.log("onClear() Method.");
+    this.userForm.reset();
+  }
+
+  onCancel() {
+    this.router.navigate(["employees"]);
   }
 }

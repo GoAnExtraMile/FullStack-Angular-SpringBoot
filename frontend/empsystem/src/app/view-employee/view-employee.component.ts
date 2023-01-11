@@ -27,4 +27,8 @@ export class ViewEmployeeComponent implements OnInit {
       (err) => console.log(err)
     );
   }
+
+  onBack() {
+    this.router.navigate(["employees"]);
+  }
 }
