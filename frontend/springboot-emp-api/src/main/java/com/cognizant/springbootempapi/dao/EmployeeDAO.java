@@ -6,14 +6,16 @@ import com.cognizant.springbootempapi.model.Employee;
 
 public interface EmployeeDAO {
 	
-	int save(Employee employee);
+	Employee save(Employee employee);
 	
-	int update(Employee employee, int id);
+	Employee update(Employee employee, int id);
 	
 	int delete(int id);
 	
 	List<Employee> getAll();
 	
 	Employee getById(int id);
+	
+	Employee getByEmailId(String emailId);
 
 }

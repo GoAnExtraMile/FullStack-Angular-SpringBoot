@@ -1,8 +1,11 @@
 package com.cognizant.springbootempapi.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,24 +37,36 @@ public class EmployeeController {
 	// Get Employee By Id
 	
 	@GetMapping("/employees/{id}")
-	public Employee getEmployeeById(@PathVariable int id) {
-		return empDao.getById(id);
+	public ResponseEntity<Employee> getEmployeeById(@PathVariable int id) {
+		Employee employee = empDao.getById(id);
+		return ResponseEntity.ok(employee);
+		//return empDao.getById(id);
 	}
 	
 	// Create Employee
 	
 	@PostMapping("/employees")
-	public String saveEmployee(@RequestBody Employee employee) {
-		 return empDao.save(employee) + " number of records saved to the database.";
+	public Employee saveEmployee(@RequestBody Employee employee) {
+		 //return empDao.save(employee) + " number of records saved to the database.";
+		return empDao.save(employee);
 	}
+	
+	// Update Employee 
 	
 	@PutMapping("/employees/{id}")
-	public String updateEmployee(@RequestBody Employee employee, @PathVariable int id) {
-		 return empDao.update(employee, id) + " number of records updated to the database.";
+	public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee, @PathVariable int id) {
+		 //return empDao.update(employee, id) + " number of records updated to the database.";
+		return ResponseEntity.ok(empDao.update(employee, id)); 
 	}
 	
+	// Delete Employee
+	
 	@DeleteMapping("/employees/{id}")
-	public String deleteEmployeeById(@PathVariable int id) {
-		return empDao.delete(id) + " number of records deleted from database.";
+	public ResponseEntity<Map<String, Boolean>> deleteEmployeeById(@PathVariable int id) {				
+		String str = empDao.delete(id) + " number of records deleted from database.";
+		Map<String, Boolean> response = new HashMap<>();
+		response.put(str, Boolean.TRUE);
+		return ResponseEntity.ok(response);
+		//return ResponseEntity.ok((empDao.delete(id) + " number of records deleted from database."));
 	}
 }
