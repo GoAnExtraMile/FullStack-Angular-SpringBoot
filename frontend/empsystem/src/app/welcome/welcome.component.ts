@@ -17,4 +17,8 @@ export class WelcomeComponent implements OnInit {
       console.log("Ename: ", this.ename);
     });
   }
+
+  onBack() {
+    this.router.navigate(["employees"]);
+  }
 }
